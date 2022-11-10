@@ -1,6 +1,6 @@
-import Processo from "../abstracoes/processo";
-import Cliente from "../modelos/cliente";
-import Endereco from "../modelos/endereco";
+import Processo from "../../abstracoes/processo";
+import Cliente from "../../modelos/cliente";
+import Endereco from "../../modelos/endereco";
 
 export default class CadastroEnderecoTitular extends Processo {
     private cliente: Cliente
@@ -19,7 +19,7 @@ export default class CadastroEnderecoTitular extends Processo {
         let pais = this.entrada.receberTexto('Qual o país?')
         let codigoPostal = this.entrada.receberTexto('Qual o código postal?')
         let endereco = new Endereco(rua,bairro,cidade,estado,pais,codigoPostal)
-        this.cliente.Endereco = endereco
+        // this.cliente.Endereco = endereco
     }
 
 }

@@ -1,8 +1,6 @@
 import Processo from "../../abstracoes/processo";
 import Cliente from "../../modelos/cliente";
-import Armazem from "../../dominio/armazem"
-import { findSourceMap } from "module";
-import Dependente from "../../modelos/dependente";
+import Armazem from "../../dominio/armazem";
 import Endereco from "../../modelos/endereco";
 
 export default class CadastroDepente extends Processo{
@@ -26,6 +24,7 @@ export default class CadastroDepente extends Processo{
             let dependente = new Cliente (nome, nomeSocial, dataNascimento)
 
             dependente.setEndereco = titular?.Endereco.clonar() as Endereco
+            
 
             titular.setDependente = dependente
             dependente.setTitular = titular

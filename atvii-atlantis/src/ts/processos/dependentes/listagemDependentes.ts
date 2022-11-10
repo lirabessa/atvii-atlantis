@@ -1,20 +1,33 @@
 import Processo from "../../abstracoes/processo";
 import Armazem from "../../dominio/armazem";
+import ImpressorDependetes from "../../impressores/impressorDependentes";
 import Cliente from "../../modelos/cliente";
 
-export default class ListagemDependetes extends Processo {
+export default class ListagemDependetes extends Processo{
+    private clientes!: Cliente[]
+    private impressor!: ImpressorDependetes
     
-    private armazem : Cliente[]
     constructor(){
         super()
-        this.armazem = Armazem.InstanciaUnica.Clientes
+        this.clientes = Armazem.InstanciaUnica.Clientes
     }
 
     processar(): void {
-        let documento = this.entrada.receberTexto('Insira o numero do documento do Titular: ')
-                
-        let titular = this.armazem.find(c => c.Documentos.find(d => d.Numero == documento))
-        console.log(titular?.Nome);
         
+        console.log(`Lista de Dependentes: `);
+        this.clientes.forEach(dep => {
+            if(this.dependente(dep)){                
+                this.impressor = new ImpressorDependetes(dep)
+                console.log(this.impressor.imprimir());
+            }
+        })
+    }
+
+    private dependente (dependente:Cliente): boolean{
+        let verificacao = false
+        if(dependente.Titular != undefined){
+            verificacao = true
+        }        
+        return verificacao
     }
 }
