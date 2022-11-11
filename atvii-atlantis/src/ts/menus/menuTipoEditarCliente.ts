@@ -8,6 +8,8 @@ export default class MenuTipoEditarCliente implements Menu{
         console.log(`| 1 - Dados Pessoais`)
         console.log(`| 2 - Documentos`)
         console.log(`| 3 - Telefones`)
-            console.log(`----------------------`)
+        console.log(`| 4 - Dependentes`);
+        
+        console.log(`----------------------`)
     }
 }

@@ -1,8 +1,8 @@
-import { Script } from "vm"
 import Processo from "../abstracoes/processo"
 import MenuPrincipal from "../menus/menuPricipal"
+import MenuTipoEditarCliente from "../menus/menuTipoEditarCliente"
 import GerarScript from "../scripts/gerarClienteAutomatico"
-import EditarCliente from "./cliente/editarClienteTitular"
+import EditarCliente from "./cliente/TipoEditarClienteTitular"
 import TipoCadastroCliente from "./tipoCadastroCliente"
 import TipoListagemClientes from "./tipoListagemClientes"
 
