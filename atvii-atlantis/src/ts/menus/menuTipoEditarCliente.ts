@@ -6,10 +6,10 @@ export default class MenuTipoEditarCliente implements Menu{
         console.log(`O que você gostaria de editar?`);
         console.log(`----------------------`)
         console.log(`| 1 - Dados Pessoais`)
-        console.log(`| 2 - Documentos`)
-        console.log(`| 3 - Telefones`)
-        console.log(`| 4 - Dependentes`);
-        
+        console.log(`| 2 - Endereço`);        
+        console.log(`| 3 - Documentos`)
+        console.log(`| 4 - Telefones`)
+        console.log(`| 5 - Dependentes`);
         console.log(`----------------------`)
     }
 }
