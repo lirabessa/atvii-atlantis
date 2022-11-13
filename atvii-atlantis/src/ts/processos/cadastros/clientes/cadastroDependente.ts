@@ -1,7 +1,7 @@
-import Processo from "../../abstracoes/processo";
-import Cliente from "../../modelos/cliente";
-import Armazem from "../../dominio/armazem";
-import Endereco from "../../modelos/endereco";
+import Processo from "../../../abstracoes/processo";
+import Cliente from "../../../modelos/cliente";
+import Armazem from "../../../dominio/armazem";
+import Endereco from "../../../modelos/endereco";
 
 export default class CadastroDepente extends Processo{
     private listaTitular : Cliente []

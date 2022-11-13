@@ -1,6 +1,6 @@
-import Processo from "../../abstracoes/processo";
-import Armazem from "../../dominio/armazem";
-import Cliente from "../../modelos/cliente";
+import Processo from "../../../abstracoes/processo";
+import Armazem from "../../../dominio/armazem";
+import Cliente from "../../../modelos/cliente";
 import CadastrarDocumentosCliente from "../documentos/cadastrarDocumentosCliente";
 import CadastroEnderecoTitular from "../endereco/cadastroEnderecoTitular";
 

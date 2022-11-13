@@ -3,8 +3,8 @@ import Armazem from "../dominio/armazem";
 import Impressor from "../interfaces/impressor";
 import MenuTipoEditarCliente from "../menus/menuTipoEditarCliente";
 import Cliente from "../modelos/cliente";
-import EditarDadosTitular from "./cliente/editarDadosCliente";
-import EditarEnderecoTitular from "./endereco/editarEnderecoTitular";
+import EditarDadosTitular from "./editar/editarDadosCliente";
+import EditarEnderecoTitular from "./editar/editarEnderecoTitular";
 
 export default class EditarCliente extends Processo{
   
