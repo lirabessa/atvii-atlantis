@@ -4,7 +4,7 @@ import MenuTipoEditarCliente from "../menus/menuTipoEditarCliente"
 import GerarScript from "../scripts/gerarClienteAutomatico"
 import EditarCliente from "./TipoEditarClienteTitular"
 import TipoCadastroCliente from "./tipoCadastroCliente"
-import TipoListagemClientes from "./tipoListagemClientes"
+import TipoListagemClientes from "./listagem/tipoListagemClientes"
 
 export default class Principal extends Processo {
     constructor() {

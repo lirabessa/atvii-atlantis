@@ -22,10 +22,7 @@ export default class ListaDependenteUnico extends Processo {
                 console.log(impressor.imprimir());
             })
         } else {
-            console.log('Não enontrado');
-
+            console.log('Não encontrado');
         }
-
-
     }
 }
