@@ -1,8 +1,10 @@
 import Impressor from "../interfaces/impressor";
 import Cliente from "../modelos/cliente";
+import ImpressorEndereco from "./impressorEndereco";
 
 export default class ImpressorDependetes implements Impressor{
-    private dependente: Cliente    
+    private dependente: Cliente
+    private impressor!: Impressor    
 
     constructor(cliente : Cliente){
         this.dependente = cliente
@@ -16,7 +18,9 @@ export default class ImpressorDependetes implements Impressor{
         + `Nome Social: ${this.dependente.NomeSocial}\n`
         + `Data Nascimento: ${this.dependente.DataNascimento}\n`
 
-        
+        this.impressor = new ImpressorEndereco(this.dependente.Endereco)
+        impressao = impressao + `\n${this.impressor.imprimir()}`
+
         impressao = impressao + `\n**************`        
         return impressao
     }

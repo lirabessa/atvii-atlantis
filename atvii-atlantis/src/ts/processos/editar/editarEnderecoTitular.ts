@@ -1,6 +1,7 @@
 import Processo from "../../abstracoes/processo";
 import Armazem from "../../dominio/armazem";
 import Cliente from "../../modelos/cliente";
+import Endereco from "../../modelos/endereco";
 
 
 export default class EditarEnderecoTitular extends Processo{
@@ -20,23 +21,29 @@ export default class EditarEnderecoTitular extends Processo{
 
         if (titular){
             let novaRua = this.entrada.receberTexto('Qual nova rua?')
-            titular.setEndereco.setRua = novaRua
+            titular.Endereco.setRua = novaRua
 
             let novoBairro = this.entrada.receberTexto('Qual novo Bairro')
-            titular.setEndereco.setBairro = novoBairro
+            titular.Endereco.setBairro = novoBairro
 
             let novoCidade = this.entrada.receberTexto('Qual nova Cidade')
-            titular.setEndereco.setCidade = novoCidade
+            titular.Endereco.setCidade = novoCidade
 
             let novoEstado = this.entrada.receberTexto('Qual novo Estado')
-            titular.setEndereco.setEstado = novoEstado
+            titular.Endereco.setEstado = novoEstado
 
             let novoPais = this.entrada.receberTexto('Qual novo Pais')
-            titular.setEndereco.setPais = novoPais
+            titular.Endereco.setPais = novoPais
 
             let novoCodigoPostal = this.entrada.receberTexto('Qual novo CEP')
-            titular.setEndereco.setCodigoPostal = novoCodigoPostal
+            titular.Endereco.setCodigoPostal = novoCodigoPostal
         
+            titular.Dependentes.forEach(dependente => {
+                dependente.setEndereco = titular?.Endereco.clonar() as Endereco
+            })
+            
+            
+
         }
     }
 }

@@ -18,8 +18,10 @@ export default class GerarScript {
             '12215330')
         let telefone1 = new Telefone ('12', '981600811')
         let documento1 = new Documento ('41488874859', TipoDocumento.CPF, new Date ('1997-07-12'))
+        let documento3 = new Documento ('482115890', TipoDocumento.RG, new Date ('1992/07/11'))
 
         cliente1.setDocumento = documento1
+        cliente1.setDocumento = documento3
         cliente1.setTelefone = telefone1
         cliente1.setEndereco = endereco1
         
@@ -58,7 +60,7 @@ export default class GerarScript {
     let armazem2 = Armazem.InstanciaUnica.Clientes
     armazem2.push(cliente2)
 
-    let dependente2 = new Cliente ( 'Matheus', 'Zé Loko', new Date ('2010-07-04'))
+    let dependente2 = new Cliente ('Matheus', 'Zé Loko', new Date ('2010-07-04'))
     endereco2 = dependente2.setEndereco = cliente2?.Endereco.clonar() as Endereco
     
     dependente2.setEndereco = endereco2

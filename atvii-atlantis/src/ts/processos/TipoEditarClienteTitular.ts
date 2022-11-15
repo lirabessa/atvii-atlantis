@@ -4,6 +4,7 @@ import Impressor from "../interfaces/impressor";
 import MenuTipoEditarCliente from "../menus/menuTipoEditarCliente";
 import Cliente from "../modelos/cliente";
 import EditarDadosTitular from "./editar/editarDadosCliente";
+import EditarDepedente from "./editar/editarDependetes";
 import EditarEnderecoTitular from "./editar/editarEnderecoTitular";
 
 export default class EditarCliente extends Processo{
@@ -28,7 +29,10 @@ export default class EditarCliente extends Processo{
                     this.processo = new EditarEnderecoTitular()
                     this.processo.processar()
                     break;
-                    
+                case 5:
+                    this.processo = new EditarDepedente()
+                    this.processo.processar()
+                    break;
             }
     }
 }

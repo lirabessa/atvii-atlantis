@@ -25,7 +25,6 @@ export default class CadastroDepente extends Processo{
 
             dependente.setEndereco = titular?.Endereco.clonar() as Endereco
             
-
             titular.setDependente = dependente
             dependente.setTitular = titular
             
