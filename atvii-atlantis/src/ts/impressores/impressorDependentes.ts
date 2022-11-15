@@ -22,7 +22,6 @@ export default class ImpressorDependetes implements Impressor{
             console.log(id);
             
         }
-
         // this.impressor = new ImpressorEndereco(this.dependente.Endereco)
         // impressao = impressao + `\n${this.impressor.imprimir()}`
 
