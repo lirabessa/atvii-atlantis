@@ -1,3 +1,3 @@
 export default interface Impressor {
-    imprimir(): string
+    imprimir(id?:number): string
 }

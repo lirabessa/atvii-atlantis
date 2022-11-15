@@ -19,9 +19,11 @@ export default class EditarDepedente extends Processo{
             titular?.Dependentes.forEach(dep => {
                 let impressor = new ImpressorDependetes(dep)
                 console.log(impressor.imprimir());
+
+                console.log('Qual ID do dependente? ');
+                
             })
 
-            
         }
 
     }

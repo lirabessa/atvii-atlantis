@@ -29,12 +29,16 @@ export default class GerarScript {
         armazem.push(cliente1)
 
         let dependente1 = new Cliente ( 'Maria', 'Clara', new Date ('2010-05-26'))
+        let dependente3 = new Cliente ( 'Ana','Isabel', new Date ('2012/05/18'))
         endereco1 = dependente1.setEndereco = cliente1?.Endereco.clonar() as Endereco
         
         dependente1.setEndereco = endereco1
+        dependente3.setEndereco = endereco1
 
-        cliente1.setDependente = dependente1
-        dependente1.setTitular = cliente1
+        cliente1.setDependente = dependente1 
+        cliente1.setDependente = dependente3
+         dependente1.setTitular = cliente1
+         dependente3.setTitular = cliente1
 
         armazem.push(dependente1)
 
@@ -71,12 +75,13 @@ export default class GerarScript {
     armazem.push(dependente2)
 
 
-        console.log(`Cadastro Automatico do titular: ${cliente2.Nome} concluido`);
-        console.log(`Cadastro Automatico do depedendente: ${dependente2.Nome} concluido`);
-
-        console.log(`Cadastro Automatico do titular: ${cliente1.Nome} concluido`);
-        console.log(`Cadastro Automatico do depedendente: ${dependente1.Nome} concluido`);
-
+    
+    console.log(`Cadastro Automatico do titular: ${cliente1.Nome} concluido`);
+    console.log(`Cadastro Automatico do depedendente: ${dependente1.Nome} concluido`);
+    console.log(`Cadastro Automatico do depedendente: ${dependente3.Nome} concluido`);
+    
+    console.log(`Cadastro Automatico do titular: ${cliente2.Nome} concluido`);
+    console.log(`Cadastro Automatico do depedendente: ${dependente2.Nome} concluido`);
         
         
     }

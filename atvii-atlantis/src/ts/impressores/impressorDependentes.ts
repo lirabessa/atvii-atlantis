@@ -10,18 +10,23 @@ export default class ImpressorDependetes implements Impressor{
         this.dependente = cliente
     }
 
-    imprimir(): string {
-                       
+    imprimir(id?:number): string {
         let impressao = `***********************\n`
         + `Nome do Titular do Dependente: ${this.dependente.Titular.Nome}\n`
         + `Nome: ${this.dependente.Nome}\n`
         + `Nome Social: ${this.dependente.NomeSocial}\n`
         + `Data Nascimento: ${this.dependente.DataNascimento}\n`
 
-        this.impressor = new ImpressorEndereco(this.dependente.Endereco)
-        impressao = impressao + `\n${this.impressor.imprimir()}`
+        if(id != undefined ){
+            impressao = `ID DEPENDENTE: ${id.toString()}` + impressao
+            console.log(id);
+            
+        }
 
-        impressao = impressao + `\n**************`        
+        // this.impressor = new ImpressorEndereco(this.dependente.Endereco)
+        // impressao = impressao + `\n${this.impressor.imprimir()}`
+
+        impressao = impressao + `\n*`        
         return impressao
     }
 }
