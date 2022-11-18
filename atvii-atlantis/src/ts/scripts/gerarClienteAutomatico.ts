@@ -29,22 +29,22 @@ export default class GerarScript {
         armazem.push(cliente1)
 
         let dependente1 = new Cliente ( 'Maria', 'Clara', new Date ('2010-05-26'))
+        let docdep = new Documento ('1234567890', TipoDocumento.CPF, new Date ('1991-08-09'))
         let dependente3 = new Cliente ( 'Ana','Isabel', new Date ('2012/05/18'))
         endereco1 = dependente1.setEndereco = cliente1?.Endereco.clonar() as Endereco
         
         dependente1.setEndereco = endereco1
         dependente3.setEndereco = endereco1
-
+        dependente1.setDocumento = docdep
         cliente1.setDependente = dependente1 
         cliente1.setDependente = dependente3
-         dependente1.setTitular = cliente1
-         dependente3.setTitular = cliente1
+        dependente1.setTitular = cliente1
+        dependente3.setTitular = cliente1
 
         armazem.push(dependente1)
 
 
     //**************************************************************** */
-
 
     let cliente2 = new Cliente ( 'Rodrigo', 'Digu', new Date ('1993-06-09'))
     let endereco2 = new Endereco (

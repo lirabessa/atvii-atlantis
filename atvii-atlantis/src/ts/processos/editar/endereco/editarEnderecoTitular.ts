@@ -1,7 +1,7 @@
-import Processo from "../../abstracoes/processo";
-import Armazem from "../../dominio/armazem";
-import Cliente from "../../modelos/cliente";
-import Endereco from "../../modelos/endereco";
+import Processo from "../../../abstracoes/processo";
+import Armazem from "../../../dominio/armazem";
+import Cliente from "../../../modelos/cliente";
+import Endereco from "../../../modelos/endereco";
 
 
 export default class EditarEnderecoTitular extends Processo{
@@ -39,7 +39,7 @@ export default class EditarEnderecoTitular extends Processo{
             titular.Endereco.setCodigoPostal = novoCodigoPostal
         
             titular.Dependentes.forEach(dependente => {
-                dependente.setEndereco = titular?.Endereco.clonar() as Endereco
+            dependente.setEndereco = titular?.Endereco.clonar() as Endereco
             })
             
             

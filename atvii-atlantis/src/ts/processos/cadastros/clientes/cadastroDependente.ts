@@ -2,6 +2,9 @@ import Processo from "../../../abstracoes/processo";
 import Cliente from "../../../modelos/cliente";
 import Armazem from "../../../dominio/armazem";
 import Endereco from "../../../modelos/endereco";
+import CadastroEnderecoTitular from "../endereco/cadastroEnderecoTitular";
+import CadastrarDocumentosCliente from "../documentos/cadastrarDocumentosCliente";
+import Telefone from "../../../modelos/telefone";
 
 export default class CadastroDepente extends Processo{
     private listaTitular : Cliente []
@@ -23,7 +26,12 @@ export default class CadastroDepente extends Processo{
             let dataNascimento = this.entrada.receberData ('Qual sua data de nascimento?')
             let dependente = new Cliente (nome, nomeSocial, dataNascimento)
 
+            this.processo = new CadastrarDocumentosCliente(dependente)
+            this.processo.processar()
+
             dependente.setEndereco = titular?.Endereco.clonar() as Endereco
+
+            dependente.setTelefone = titular.Telefones.clonar() as Telefone
             
             titular.setDependente = dependente
             dependente.setTitular = titular

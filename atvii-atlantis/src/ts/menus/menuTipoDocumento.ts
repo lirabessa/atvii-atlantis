@@ -9,7 +9,6 @@ export default class MenuTipoDocumento implements Menu {
         console.log(`| 1 - Registro Geral`)
         console.log(`| 2 - Cadastro de Pessoas Física`)
         console.log(`| 3 - Passaporte`)
-        console.log(`| 0 - Finalizar cadastro de documentos`)
         console.log(`----------------------`)
     }
 }
