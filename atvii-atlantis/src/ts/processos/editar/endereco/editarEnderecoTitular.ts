@@ -21,22 +21,22 @@ export default class EditarEnderecoTitular extends Processo{
 
         if (titular){
             let novaRua = this.entrada.receberTexto('Qual nova rua?')
-            titular.Endereco.setRua = novaRua
+            titular.Endereco.setRua = novaRua || titular.Endereco.Rua
 
             let novoBairro = this.entrada.receberTexto('Qual novo Bairro')
-            titular.Endereco.setBairro = novoBairro
+            titular.Endereco.setBairro = novoBairro || titular.Endereco.Bairro
 
             let novoCidade = this.entrada.receberTexto('Qual nova Cidade')
-            titular.Endereco.setCidade = novoCidade
+            titular.Endereco.setCidade = novoCidade || titular.Endereco.Cidade
 
             let novoEstado = this.entrada.receberTexto('Qual novo Estado')
-            titular.Endereco.setEstado = novoEstado
+            titular.Endereco.setEstado = novoEstado || titular.Endereco.Estado
 
             let novoPais = this.entrada.receberTexto('Qual novo Pais')
-            titular.Endereco.setPais = novoPais
+            titular.Endereco.setPais = novoPais || titular.Endereco.Pais
 
             let novoCodigoPostal = this.entrada.receberTexto('Qual novo CEP')
-            titular.Endereco.setCodigoPostal = novoCodigoPostal
+            titular.Endereco.setCodigoPostal = novoCodigoPostal || titular.Endereco.CodigoPostal
         
             titular.Dependentes.forEach(dependente => {
             dependente.setEndereco = titular?.Endereco.clonar() as Endereco

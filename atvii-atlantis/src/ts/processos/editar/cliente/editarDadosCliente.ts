@@ -10,25 +10,21 @@ export default class EditarDadosTitular extends Processo{
     
     constructor(){
         super()
-
         this.listaTitular = Armazem.InstanciaUnica.Clientes
-        
     }
 
     processar(): void {
-     
-      
-        let numero = this.entrada.receberTexto ('Qual número do documento do Titular')
+        let numero = this.entrada.receberTexto ('Qual número do documento do Titular? ')
         let titular = this.listaTitular.find(titular => titular.Documentos.find(documento => documento.Numero == numero))
         console.log(titular?.Nome);
 
         if(titular){
             let NovoNome = this.entrada.receberTexto('Qual seu nome?')
-            titular.setNome = NovoNome
+            titular.setNome = NovoNome || titular.Nome
             let NovoNomeSocial = this.entrada.receberTexto ('Qual seu nome Social?')
-            titular.setNomeSocial = NovoNomeSocial
+            titular.setNomeSocial = NovoNomeSocial || titular.NomeSocial
             let NovoDataNascimento = this.entrada.receberData ('Qual sua data de nascimento?')
-            titular.setDataNascimento = NovoDataNascimento
+            titular.setDataNascimento = NovoDataNascimento || titular.DataNascimento
             console.log(`${NovoNome}, cadastrado com sucesso`);
             
         }

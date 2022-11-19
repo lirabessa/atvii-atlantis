@@ -2,9 +2,8 @@ import Processo from "../../../abstracoes/processo";
 import Cliente from "../../../modelos/cliente";
 import Armazem from "../../../dominio/armazem";
 import Endereco from "../../../modelos/endereco";
-import CadastroEnderecoTitular from "../endereco/cadastroEnderecoTitular";
 import CadastrarDocumentosCliente from "../documentos/cadastrarDocumentosCliente";
-import Telefone from "../../../modelos/telefone";
+
 
 export default class CadastroDepente extends Processo{
     private listaTitular : Cliente []
@@ -14,24 +13,22 @@ export default class CadastroDepente extends Processo{
     }
 
     processar(): void {
-        let numero = this.entrada.receberTexto ('Qual número do documento do Titular')
+        let numero = this.entrada.receberTexto ('Qual número do documento do Titular? ')
         let titular = this.listaTitular.find(titular => titular.Documentos.find(documento => documento.Numero == numero))
         console.log(titular?.Nome);
         
 
         if(titular){
 
-            let nome = this.entrada.receberTexto('Qual seu nome?')
-            let nomeSocial = this.entrada.receberTexto ('Qual seu nome Social?')
-            let dataNascimento = this.entrada.receberData ('Qual sua data de nascimento?')
+            let nome = this.entrada.receberTexto('Qual o nome do dependente?')
+            let nomeSocial = this.entrada.receberTexto ('Qual nome Social do dependente?')
+            let dataNascimento = this.entrada.receberData ('Qual a data de nascimento do dependente?')
             let dependente = new Cliente (nome, nomeSocial, dataNascimento)
 
             this.processo = new CadastrarDocumentosCliente(dependente)
             this.processo.processar()
 
             dependente.setEndereco = titular?.Endereco.clonar() as Endereco
-
-            dependente.setTelefone = titular.Telefones.clonar() as Telefone
             
             titular.setDependente = dependente
             dependente.setTitular = titular

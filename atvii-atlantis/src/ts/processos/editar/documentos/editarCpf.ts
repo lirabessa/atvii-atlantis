@@ -2,7 +2,7 @@ import Processo from "../../../abstracoes/processo";
 import Armazem from "../../../dominio/armazem";
 import Cliente from "../../../modelos/cliente";
 
-export default class EditarRg extends Processo{
+export default class EditarCpf extends Processo{
     private listaDocumentos : Cliente[]
     constructor (){
         super()
@@ -15,9 +15,9 @@ export default class EditarRg extends Processo{
         console.log(titular?.Nome);
 
         if(titular){
-            let novoNumero = this.entrada.receberTexto('Qual novo numero do rg? ')
+            let novoNumero = this.entrada.receberTexto('Qual novo numero do CPF? ')
             titular.Documentos.find(documento => 
-                documento.Tipo == 'Registro Geral'? documento.setNumero = novoNumero: null
+                documento.Tipo == 'Cadastro de Pessoas Física'? documento.setNumero = novoNumero: null
             )
         }
     }

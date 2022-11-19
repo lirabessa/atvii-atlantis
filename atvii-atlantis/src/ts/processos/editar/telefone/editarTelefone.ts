@@ -23,10 +23,10 @@ export default class EditarTelefone extends Processo{
 
         if(titular){
             let novoDdd = this.entrada.receberTexto ('Qual novo DDD? ')
-            titular.setTelefone.setNumero = novoDdd
+            titular.setTelefone.setNumero = novoDdd || titular.setTelefone.Ddd
 
             let novoNumero = this.entrada.receberTexto ('Qual novo Número? ')
-            titular.setTelefone.setNumero = novoNumero
+            titular.setTelefone.setNumero = novoNumero || titular.setTelefone.Numero
             
         }
     }

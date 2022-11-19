@@ -12,8 +12,8 @@ export default class CadastroTelefone extends Processo {
 
     processar(): void {
         console.log('Coletando os dados de endereço...')
-        let ddd = this.entrada.receberTexto('Qual a rua?')
-        let numero = this.entrada.receberTexto('Qual o bairro?')
+        let ddd = this.entrada.receberTexto('Qual o ddd?')
+        let numero = this.entrada.receberTexto('Qual o numero?')
         let telefone = new Telefone(ddd, numero)
         this.cliente.setTelefone = telefone
     }

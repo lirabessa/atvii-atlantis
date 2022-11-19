@@ -19,11 +19,13 @@ export default class GerarScript {
         let telefone1 = new Telefone ('12', '981600811')
         let documento1 = new Documento ('41488874859', TipoDocumento.CPF, new Date ('1997-07-12'))
         let documento3 = new Documento ('482115890', TipoDocumento.RG, new Date ('1992/07/11'))
+        let documento4 = new Documento ('0000000000', TipoDocumento.Passaporte, new Date ('1992/01/11'))
 
         cliente1.setDocumento = documento1
         cliente1.setDocumento = documento3
         cliente1.setTelefone = telefone1
         cliente1.setEndereco = endereco1
+        cliente1.setDocumento = documento4
         
         let armazem = Armazem.InstanciaUnica.Clientes
         armazem.push(cliente1)

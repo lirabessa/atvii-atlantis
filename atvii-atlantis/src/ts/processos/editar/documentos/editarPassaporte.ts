@@ -2,7 +2,7 @@ import Processo from "../../../abstracoes/processo";
 import Armazem from "../../../dominio/armazem";
 import Cliente from "../../../modelos/cliente";
 
-export default class EditarRg extends Processo{
+export default class EditarPassaporte extends Processo{
     private listaDocumentos : Cliente[]
     constructor (){
         super()
@@ -10,14 +10,14 @@ export default class EditarRg extends Processo{
     }
 
     processar(): void {
-        let numero = this.entrada.receberTexto ('Qual número do documento do Titular')
+        let numero = this.entrada.receberTexto ('Qual número do documento do Titular? ')
         let titular = this.listaDocumentos.find(titular => titular.Documentos.find(documento => documento.Numero == numero))
         console.log(titular?.Nome);
 
         if(titular){
-            let novoNumero = this.entrada.receberTexto('Qual novo numero do rg? ')
+            let novoNumero = this.entrada.receberTexto('Qual novo numero do Passaporte? ')
             titular.Documentos.find(documento => 
-                documento.Tipo == 'Registro Geral'? documento.setNumero = novoNumero: null
+                documento.Tipo == 'Passaporte'? documento.setNumero = novoNumero: null
             )
         }
     }
